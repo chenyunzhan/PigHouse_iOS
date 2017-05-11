@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2BC1AF44FABC188CE1CE4C11 /* libPods-PigHouse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0DF6437F848254774C619B /* libPods-PigHouse.a */; };
+		7F09CDB01EC4688D0055597C /* SelectableOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09CDAF1EC4688D0055597C /* SelectableOverlay.swift */; };
 		7F4FB4EC1EC19CF200CF0332 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4FB4EB1EC19CF200CF0332 /* AppDelegate.swift */; };
 		7F4FB4EE1EC19CF200CF0332 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4FB4ED1EC19CF200CF0332 /* ViewController.swift */; };
 		7F4FB4F11EC19CF200CF0332 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F4FB4EF1EC19CF200CF0332 /* Main.storyboard */; };
 		7F4FB4F31EC19CF200CF0332 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F4FB4F21EC19CF200CF0332 /* Assets.xcassets */; };
 		7F4FB4F61EC19CF200CF0332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F4FB4F41EC19CF200CF0332 /* LaunchScreen.storyboard */; };
+		D50F540AC5198DEDEAD383C9 /* Pods_PigHouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7455E25163A83A564C0A0F4E /* Pods_PigHouse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7455E25163A83A564C0A0F4E /* Pods_PigHouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PigHouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F09CDAF1EC4688D0055597C /* SelectableOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableOverlay.swift; sourceTree = "<group>"; };
 		7F4FB4E81EC19CF200CF0332 /* PigHouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PigHouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F4FB4EB1EC19CF200CF0332 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F4FB4ED1EC19CF200CF0332 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,7 +29,6 @@
 		7F4FB5001EC1B7F700CF0332 /* PigHouse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PigHouse-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		C4B70B725F917F492F1D5776 /* Pods-PigHouse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PigHouse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PigHouse/Pods-PigHouse.debug.xcconfig"; sourceTree = "<group>"; };
 		CFFE5CAD53F8A5DDEBB4D59B /* Pods-PigHouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PigHouse.release.xcconfig"; path = "Pods/Target Support Files/Pods-PigHouse/Pods-PigHouse.release.xcconfig"; sourceTree = "<group>"; };
-		DD0DF6437F848254774C619B /* libPods-PigHouse.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PigHouse.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BC1AF44FABC188CE1CE4C11 /* libPods-PigHouse.a in Frameworks */,
+				D50F540AC5198DEDEAD383C9 /* Pods_PigHouse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,9 +55,17 @@
 		6062D27D99EF95E66375BD07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DD0DF6437F848254774C619B /* libPods-PigHouse.a */,
+				7455E25163A83A564C0A0F4E /* Pods_PigHouse.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F09CDAE1EC468680055597C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7F09CDAF1EC4688D0055597C /* SelectableOverlay.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		7F4FB4DF1EC19CF200CF0332 = {
@@ -79,6 +89,7 @@
 		7F4FB4EA1EC19CF200CF0332 /* PigHouse */ = {
 			isa = PBXGroup;
 			children = (
+				7F09CDAE1EC468680055597C /* Common */,
 				7F4FB5001EC1B7F700CF0332 /* PigHouse-Bridging-Header.h */,
 				7F4FB4EB1EC19CF200CF0332 /* AppDelegate.swift */,
 				7F4FB4ED1EC19CF200CF0332 /* ViewController.swift */,
@@ -215,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F09CDB01EC4688D0055597C /* SelectableOverlay.swift in Sources */,
 				7F4FB4EE1EC19CF200CF0332 /* ViewController.swift in Sources */,
 				7F4FB4EC1EC19CF200CF0332 /* AppDelegate.swift in Sources */,
 			);
