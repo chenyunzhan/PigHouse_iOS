@@ -10,16 +10,15 @@ import UIKit
 import Alamofire
 
 
-class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate,AMapNaviWalkManagerDelegate {
+class ViewController: UIViewController, MAMapViewDelegate,AMapNaviWalkManagerDelegate {
 
     var mapView: MAMapView!
     var annotations: Array<MAPointAnnotation>!
     var houseArray: Array<Dictionary<String, Any>>!
-    var search: AMapSearchAPI!
     var walkManager: AMapNaviWalkManager!
     
-    var startAnnotation: MAPointAnnotation?
-    var destinationAnnotation: MAPointAnnotation?
+    var startPoint: AMapNaviPoint!
+    var endPoint: AMapNaviPoint!
     
     @IBOutlet weak var houseInfoView: UIView!
     
@@ -33,6 +32,7 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate,AM
     
     @IBOutlet weak var price: UILabel!
     
+    @IBOutlet weak var distance: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +42,6 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate,AM
         mapView.userTrackingMode = MAUserTrackingMode.follow
         self.view.addSubview(mapView)
         
-        search = AMapSearchAPI()
-        search.delegate = self
         
         walkManager = AMapNaviWalkManager()
         walkManager.delegate = self
@@ -164,71 +162,37 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate,AM
         self.name.text = house["name"] as? String
         self.address.text = house["adress"] as? String
         self.structure.text = house["structure"] as? String
-        self.price.text = house["attribute0"] as? String
+        self.price.text = String(format: "%@元", (house["attribute0"] as! String))
         
         
+        self.endPoint = AMapNaviPoint.location(withLatitude: CGFloat(view.annotation.coordinate.latitude), longitude: CGFloat(view.annotation.coordinate.longitude))
         
-        self.destinationAnnotation = view.annotation as? MAPointAnnotation
         
-        self.searchRoutePlanningWalk()
+        //为了方便展示步行路径规划，选择了固定的起终点
+        walkManager.calculateWalkRoute(withStart: [self.startPoint], end: [self.endPoint])
 
 
     }
     
     func mapView(_ mapView: MAMapView!, didAddAnnotationViews views: [Any]!) {
         
-        let annoationview = views.first as! MAAnnotationView
-        annoationview.canShowCallout = false;
-
+        for view in views {
+            let annoationview = view as! MAAnnotationView
+            annoationview.canShowCallout = false;
+        }
         
     }
     
     
     func mapView(_ mapView: MAMapView!, didUpdate userLocation: MAUserLocation!, updatingLocation: Bool) {
-        let userAnnotation = MAPointAnnotation()
-        userAnnotation.coordinate = userLocation.coordinate
-        self.startAnnotation = userAnnotation
-    }
-    
-    
-    func searchRoutePlanningWalk() -> Void {
-        let navi = AMapWalkingRouteSearchRequest()
-        navi.origin = AMapGeoPoint.location(withLatitude: CGFloat(self.startAnnotation!.coordinate.latitude), longitude: CGFloat(self.startAnnotation!.coordinate.longitude))
-        navi.destination = AMapGeoPoint.location(withLatitude: CGFloat(self.destinationAnnotation!.coordinate.latitude), longitude: CGFloat(self.destinationAnnotation!.coordinate.longitude))
         
-        search.aMapWalkingRouteSearch(navi)
+        self.startPoint = AMapNaviPoint.location(withLatitude: CGFloat(userLocation.coordinate.latitude), longitude: CGFloat(userLocation.coordinate.longitude))
+    }
 
-    }
-    
-    
-    func onRouteSearchDone(_ request: AMapRouteSearchBaseRequest!, response: AMapRouteSearchResponse!) {
-        if response.count > 0 {
-            //解析response获取路径信息
-            self.presentCurrentCourse()
-        }
-    }
-    
-    func aMapSearchRequest(_ request: Any!, didFailWithError error: Error!) {
-        print("Error:\(error)")
-    }
-    
-    
-    
-    func presentCurrentCourse() -> Void {
-        
-//        let startPoint = AMapNaviPoint.location(withLatitude: 39.993135, longitude: 116.474175)!
-        let startPoint = AMapNaviPoint.location(withLatitude: CGFloat((self.startAnnotation?.coordinate.latitude)!), longitude: CGFloat((self.startAnnotation?.coordinate.longitude)!))
-        let endPoint = AMapNaviPoint.location(withLatitude: CGFloat((self.destinationAnnotation?.coordinate.latitude)!), longitude: CGFloat((self.destinationAnnotation?.coordinate.longitude)!))
-        walkManager.calculateWalkRoute(withStart: [startPoint!], end: [endPoint!])
-
-        
-    }
     
     
     func walkManager(onCalculateRouteSuccess walkManager: AMapNaviWalkManager) {
         NSLog("CalculateRouteSuccess")
-        
-        
         
         guard let aRoute = walkManager.naviRoute else {
             return
@@ -250,43 +214,22 @@ class ViewController: UIViewController, MAMapViewDelegate, AMapSearchDelegate,AM
         mapView.add(selectablePolyline)
         
         
-        //更新CollectonView的信息
-//        let subtitle = String(format: "长度:%d米 | 预估时间:%d秒 | 分段数:%d", aRoute.routeLength, aRoute.routeTime, aRoute.routeSegments.count)
-//        let info = RouteCollectionViewInfo(routeID: 0, title: "路径信息:", subTitle: subtitle)
-//        
-//        routeIndicatorInfoArray.append(info)
-//        
-//        mapView.showAnnotations(mapView.annotations, animated: false)
-//        routeIndicatorView.reloadData()
+        self.distance.text = String(format: "%d米", aRoute.routeLength)
         
-//        for point in pointArray! {
-//            
-//        }
-        
-        //显示路径或开启导航
     }
-//    func mapView(_ mapView: MAMapView!, viewFor annotation: MAAnnotation!) -> MAAnnotationView! {
-//        if annotation is MAPointAnnotation {
-//            let customReuseIndetifier: String = "customReuseIndetifier"
-//            
-//            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: customReuseIndetifier) as? CustomAnnotationView
-//            
-//            if annotationView == nil {
-//                annotationView = CustomAnnotationView.init(annotation: annotation, reuseIdentifier: customReuseIndetifier)
-//
-//                annotationView?.canShowCallout = false
-//                annotationView?.isDraggable = true
-//                annotationView?.calloutOffset = CGPoint.init(x: 0, y: -5)
-//            }
-//            
-//            annotationView?.portrait = UIImage.init(named: "hema")
-//            annotationView?.name = "河马"
-//            
-//            return annotationView
-//        }
-//        
-//        return nil
-//    }
-
+    
+    func mapView(_ mapView: MAMapView!, rendererFor overlay: MAOverlay!) -> MAOverlayRenderer! {
+        
+        if overlay is SelectableOverlay {
+            let selectableOverlay = overlay as! SelectableOverlay
+            
+            let polylineRenderer = MAPolylineRenderer(overlay: selectableOverlay.overlay)
+            polylineRenderer?.lineWidth = 8.0
+            polylineRenderer?.strokeColor = selectableOverlay.selected ? selectableOverlay.selectedColor : selectableOverlay.reguarColor
+            
+            return polylineRenderer
+        }
+        return nil
+    }
 }
 

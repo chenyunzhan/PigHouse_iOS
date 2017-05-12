@@ -127,6 +127,9 @@
                                     <constraint firstAttribute="height" constant="45" id="AcL-g2-a59"/>
                                 </constraints>
                                 <state key="normal" title="我要入巢"/>
+                                <connections>
+                                    <segue destination="B03-Mj-NjP" kind="show" id="9Uo-JU-e8w"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -145,6 +148,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="address" destination="Z6z-9M-Lpq" id="NV6-Ph-R50"/>
+                        <outlet property="distance" destination="fue-oK-KBk" id="Jp3-Ej-RsV"/>
                         <outlet property="houseInfoView" destination="3J2-pe-cJl" id="5mc-kC-2Vy"/>
                         <outlet property="name" destination="SnM-Jo-uM1" id="7Ps-p4-j5c"/>
                         <outlet property="price" destination="Hih-Hl-3be" id="20S-6h-vGa"/>
@@ -155,6 +159,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="197.45127436281859"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="KN4-Z6-QDL">
+            <objects>
+                <viewController id="B03-Mj-NjP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EVU-e8-Kac"/>
+                        <viewControllerLayoutGuide type="bottom" id="S7e-nd-Fff"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Iap-hP-xqK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kio-Fb-NdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1852" y="198"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0sX-Oe-Ent">
