@@ -47,6 +47,10 @@ class ViewController: UIViewController, MAMapViewDelegate,AMapNaviWalkManagerDel
         walkManager.delegate = self
         
         initAnnotations()
+        
+        
+        self.view.bringSubview(toFront: self.houseInfoView)
+        self.view.bringSubview(toFront: self.useHouseButton)
 
     }
 
@@ -160,16 +164,16 @@ class ViewController: UIViewController, MAMapViewDelegate,AMapNaviWalkManagerDel
         self.view.bringSubview(toFront: self.useHouseButton)
         let house = self.houseArray[view.tag-10000]
         self.name.text = house["name"] as? String
-        self.address.text = house["adress"] as? String
+        self.address.text = house["address"] as? String
         self.structure.text = house["structure"] as? String
-        self.price.text = String(format: "%@元", (house["attribute0"] as! String))
+        self.price.text = String(format: "%@元", (house["price"] as! String))
         
         
         self.endPoint = AMapNaviPoint.location(withLatitude: CGFloat(view.annotation.coordinate.latitude), longitude: CGFloat(view.annotation.coordinate.longitude))
         
         
         //为了方便展示步行路径规划，选择了固定的起终点
-        walkManager.calculateWalkRoute(withStart: [self.startPoint], end: [self.endPoint])
+//        walkManager.calculateWalkRoute(withStart: [self.startPoint], end: [self.endPoint])
 
 
     }

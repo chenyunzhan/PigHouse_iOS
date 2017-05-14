@@ -160,10 +160,10 @@
             </objects>
             <point key="canvasLocation" x="1056.8" y="197.45127436281859"/>
         </scene>
-        <!--View Controller-->
+        <!--House Detail Controller-->
         <scene sceneID="KN4-Z6-QDL">
             <objects>
-                <viewController id="B03-Mj-NjP" sceneMemberID="viewController">
+                <viewController id="B03-Mj-NjP" customClass="HouseDetailController" customModule="PigHouse" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EVU-e8-Kac"/>
                         <viewControllerLayoutGuide type="bottom" id="S7e-nd-Fff"/>
@@ -171,8 +171,55 @@
                     <view key="view" contentMode="scaleToFill" id="Iap-hP-xqK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8P-SN-Zxv">
+                                <rect key="frame" x="-4" y="64" width="383" height="200"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLI-Ue-DEA">
+                                        <rect key="frame" x="0.0" y="0.0" width="383" height="200"/>
+                                    </scrollView>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="3HQ-V7-2bf">
+                                        <rect key="frame" x="0.0" y="170" width="383" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="pKL-Co-PWs"/>
+                                        </constraints>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3HQ-V7-2bf" secondAttribute="bottom" id="FK2-Hy-dZ2"/>
+                                    <constraint firstItem="LLI-Ue-DEA" firstAttribute="leading" secondItem="p8P-SN-Zxv" secondAttribute="leading" id="JAF-44-WY7"/>
+                                    <constraint firstItem="3HQ-V7-2bf" firstAttribute="leading" secondItem="p8P-SN-Zxv" secondAttribute="leading" id="PwO-za-CN9"/>
+                                    <constraint firstAttribute="trailing" secondItem="3HQ-V7-2bf" secondAttribute="trailing" id="fAF-Pc-l0N"/>
+                                    <constraint firstAttribute="bottom" secondItem="LLI-Ue-DEA" secondAttribute="bottom" id="jOb-EY-ooB"/>
+                                    <constraint firstAttribute="height" constant="200" id="nw4-Mw-Qxd"/>
+                                    <constraint firstAttribute="trailing" secondItem="LLI-Ue-DEA" secondAttribute="trailing" id="uHS-9C-cl7"/>
+                                    <constraint firstItem="LLI-Ue-DEA" firstAttribute="top" secondItem="p8P-SN-Zxv" secondAttribute="top" id="vYQ-kh-dXe"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZl-pM-fTN">
+                                <rect key="frame" x="16" y="602" width="343" height="45"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="4DH-WX-2Xj"/>
+                                </constraints>
+                                <state key="normal" title="确认定房"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="NZl-pM-fTN" secondAttribute="leading" id="1P1-C7-gUh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NZl-pM-fTN" secondAttribute="trailing" id="GJz-hY-GD2"/>
+                            <constraint firstItem="S7e-nd-Fff" firstAttribute="top" secondItem="NZl-pM-fTN" secondAttribute="bottom" constant="20" id="Gc3-s5-FWh"/>
+                            <constraint firstItem="p8P-SN-Zxv" firstAttribute="leading" secondItem="Iap-hP-xqK" secondAttribute="leadingMargin" constant="-20" id="fh9-XX-7tK"/>
+                            <constraint firstItem="p8P-SN-Zxv" firstAttribute="top" secondItem="EVU-e8-Kac" secondAttribute="bottom" id="izB-0E-wX8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p8P-SN-Zxv" secondAttribute="trailing" constant="-20" id="zUg-7U-6QQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="3HQ-V7-2bf" id="YWj-Yl-ZGb"/>
+                        <outlet property="scrollView" destination="LLI-Ue-DEA" id="Xac-MX-E38"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kio-Fb-NdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
