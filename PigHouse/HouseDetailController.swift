@@ -11,6 +11,8 @@ class HouseDetailController: UIViewController {
     
     
     let imageCount = 4
+    
+    let roomType = ["主卧","次卧1","次卧2","客厅隔段","餐厅隔段"]
 
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -18,6 +20,9 @@ class HouseDetailController: UIViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
+    @IBOutlet weak var roomTypeView: UIView!
+    
+    @IBOutlet weak var roomTypeViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         
@@ -41,9 +46,61 @@ class HouseDetailController: UIViewController {
             
             pageControl.currentPage = 0
             pageControl.numberOfPages = imageCount
+            
+            
+        }
+        
+        var count = 0
+        var roomTypeOffsetX:CGFloat = 0.0
+        var roomTypeViewRealHeight:CGFloat = 0
+
+        var roomTypeButtonX:CGFloat = 0.0
+        var roomTypeButtonY:CGFloat = 0.0
+        var roomTypeButtonWidth:CGFloat = 0.0
+        var roomTypeButtonHeight:CGFloat = 0.0
+        
+        
+        for index in 0..<self.roomType.count {
+            
+            let roomType = self.roomType[index] as NSString
+            
+            let roomTypeButton = UIButton()
+            roomTypeButton.setTitle(roomType as String, for: UIControlState.normal)
+            roomTypeButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+            roomTypeButton.layer.cornerRadius = 5
+            roomTypeButton.layer.masksToBounds = true
+            roomTypeButton.backgroundColor = UIColor(colorLiteralRed: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1)
+            let size: CGSize = roomType.size(attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 17.0)])
+            roomTypeButtonWidth = size.width+15
+            roomTypeButtonHeight = size.height+12
+            roomTypeButton.frame = CGRect(x: 0, y: 0, width: roomTypeButtonWidth, height: roomTypeButtonHeight)
+
+            
+            if(index == 0) {
+                roomTypeButtonX = 0
+                roomTypeButton.frame = CGRect(x: roomTypeButtonX, y: 0, width: roomTypeButtonWidth, height: roomTypeButtonHeight)
+                roomTypeOffsetX += roomTypeButton.frame.maxX
+            } else {
+                roomTypeOffsetX += roomTypeButton.frame.maxX + 20
+                print(self.roomTypeView.frame.width)
+                if(roomTypeOffsetX > self.roomTypeView.frame.width) {
+                    count += 1
+                    roomTypeButtonX = 0
+                } else {
+                    roomTypeButtonX = roomTypeOffsetX - roomTypeButtonWidth
+                }
+            }
+            
+            roomTypeButtonY = CGFloat(count)*(roomTypeButtonHeight+10)+30
+            roomTypeButton.frame = CGRect(x: roomTypeButtonX, y: roomTypeButtonY, width: roomTypeButtonWidth, height: roomTypeButtonHeight)
+            roomTypeViewRealHeight = roomTypeButton.frame.maxY
+            self.roomTypeView.addSubview(roomTypeButton)
+
         }
 
 
+        self.roomTypeViewHeight.constant = roomTypeViewRealHeight
+        
         
     }
     
