@@ -15,6 +15,7 @@ class ViewController: UIViewController, MAMapViewDelegate,AMapNaviWalkManagerDel
     var mapView: MAMapView!
     var annotations: Array<MAPointAnnotation>!
     var houseArray: Array<Dictionary<String, Any>>!
+    var selectedHouse: Dictionary<String, Any>!
     var walkManager: AMapNaviWalkManager!
     
     var startPoint: AMapNaviPoint!
@@ -49,8 +50,8 @@ class ViewController: UIViewController, MAMapViewDelegate,AMapNaviWalkManagerDel
         initAnnotations()
         
         
-        self.view.bringSubview(toFront: self.houseInfoView)
-        self.view.bringSubview(toFront: self.useHouseButton)
+//        self.view.bringSubview(toFront: self.houseInfoView)
+//        self.view.bringSubview(toFront: self.useHouseButton)
 
     }
 
@@ -163,6 +164,7 @@ class ViewController: UIViewController, MAMapViewDelegate,AMapNaviWalkManagerDel
         self.view.bringSubview(toFront: self.houseInfoView)
         self.view.bringSubview(toFront: self.useHouseButton)
         let house = self.houseArray[view.tag-10000]
+        self.selectedHouse = house
         self.name.text = house["name"] as? String
         self.address.text = house["address"] as? String
         self.structure.text = house["structure"] as? String
@@ -173,7 +175,7 @@ class ViewController: UIViewController, MAMapViewDelegate,AMapNaviWalkManagerDel
         
         
         //为了方便展示步行路径规划，选择了固定的起终点
-//        walkManager.calculateWalkRoute(withStart: [self.startPoint], end: [self.endPoint])
+        walkManager.calculateWalkRoute(withStart: [self.startPoint], end: [self.endPoint])
 
 
     }
@@ -235,5 +237,13 @@ class ViewController: UIViewController, MAMapViewDelegate,AMapNaviWalkManagerDel
         }
         return nil
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let houseDetail = segue.destination as! HouseDetailController
+        houseDetail.house = self.selectedHouse
+
+    }
+    
 }
 
