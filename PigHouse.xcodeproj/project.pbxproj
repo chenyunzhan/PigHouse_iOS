@@ -14,6 +14,7 @@
 		7F4FB4F31EC19CF200CF0332 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F4FB4F21EC19CF200CF0332 /* Assets.xcassets */; };
 		7F4FB4F61EC19CF200CF0332 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F4FB4F41EC19CF200CF0332 /* LaunchScreen.storyboard */; };
 		7F5E42A71EC5B3A8001B2B00 /* HouseDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5E42A61EC5B3A8001B2B00 /* HouseDetailController.swift */; };
+		7F83BEF61ECBDF0F007ADEDC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F83BEF51ECBDF0F007ADEDC /* LoginViewController.swift */; };
 		D50F540AC5198DEDEAD383C9 /* Pods_PigHouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7455E25163A83A564C0A0F4E /* Pods_PigHouse.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		7F4FB4F71EC19CF200CF0332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F4FB5001EC1B7F700CF0332 /* PigHouse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PigHouse-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		7F5E42A61EC5B3A8001B2B00 /* HouseDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseDetailController.swift; sourceTree = "<group>"; };
+		7F83BEF51ECBDF0F007ADEDC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C4B70B725F917F492F1D5776 /* Pods-PigHouse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PigHouse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PigHouse/Pods-PigHouse.debug.xcconfig"; sourceTree = "<group>"; };
 		CFFE5CAD53F8A5DDEBB4D59B /* Pods-PigHouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PigHouse.release.xcconfig"; path = "Pods/Target Support Files/Pods-PigHouse/Pods-PigHouse.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +102,7 @@
 				7F4FB4F41EC19CF200CF0332 /* LaunchScreen.storyboard */,
 				7F4FB4F71EC19CF200CF0332 /* Info.plist */,
 				7F5E42A61EC5B3A8001B2B00 /* HouseDetailController.swift */,
+				7F83BEF51ECBDF0F007ADEDC /* LoginViewController.swift */,
 			);
 			path = PigHouse;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				7F09CDB01EC4688D0055597C /* SelectableOverlay.swift in Sources */,
 				7F5E42A71EC5B3A8001B2B00 /* HouseDetailController.swift in Sources */,
 				7F4FB4EE1EC19CF200CF0332 /* ViewController.swift in Sources */,
+				7F83BEF61ECBDF0F007ADEDC /* LoginViewController.swift in Sources */,
 				7F4FB4EC1EC19CF200CF0332 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
