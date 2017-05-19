@@ -9,7 +9,9 @@ import Alamofire
 import AlamofireImage
 
 
-class HouseDetailController: UIViewController {
+class HouseDetailController: UIViewController,HouseDetailDelegate {
+
+
     
     
     let imageCount = 4
@@ -279,6 +281,36 @@ class HouseDetailController: UIViewController {
 
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        let loginVC = segue.destination as! LoginViewController
+        loginVC.delegate = self
+        
+    }
+    
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let userDefaults = UserDefaults.standard
+        let memberDic = userDefaults.dictionary(forKey: "member")
+        
+        if (memberDic != nil) {
+            
+            let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+            let authController = storyboard.instantiateViewController(withIdentifier: "AuthenticationController")
+            authController.title = "认证"
+            self.navigationController?.pushViewController(authController, animated: true)
+            
+            return false
+        }
+        
+        return true
+    }
+    
+    
+    func bookHouse() {
+        
+    }
     
 }
 
