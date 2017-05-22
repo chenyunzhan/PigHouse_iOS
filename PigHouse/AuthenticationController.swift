@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import CryptoSwift
 
 
 class AuthenticationController: UIViewController {
@@ -22,11 +23,33 @@ class AuthenticationController: UIViewController {
     
     
     func cardAuth() -> Void {
-        print("aaaa")
+        
+        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let idCardAuthController = storyboard.instantiateViewController(withIdentifier: "IDCardAuthController")
+        idCardAuthController.title = "身份证认证"
+        self.navigationController?.pushViewController(idCardAuthController, animated: true)
         
         
+        /*
         
-        let data = "<action>idcard.scan</action><client>e0c786ac-8da0-4b97-8ecf-4e94b42fd26d</client><system>系统描述：包括硬件型号和操作系统型号等</system><password>IfPLDxioYHNugrvJDkDGRLclvXZTKy</password><file>二进制文件，文件最大5M</file><ext>jpg</ext><header>1</header><json>1</json>"
+        let upAction = "idcard.scan"
+        let username = "e0c786ac-8da0-4b97-8ecf-4e94b42fd26d"
+        let psd = "IfPLDxioYHNugrvJDkDGRLclvXZTKy";
+        let md5Psd = psd.md5().uppercased()
+        let deviceType = "aaa"
+        let currentTime = "bbb"
+        let rand = "ccc";
+        let verify = (upAction+username+rand+currentTime+psd).md5().uppercased()
+        let fileExt = "jpg"
+        
+        
+        let image = UIImage(named: "test-idcard.JPG")
+        let imageData = UIImageJPEGRepresentation(image!, 1)
+        let imageStr = imageData?.base64EncodedString()
+
+        
+        let data = String(format: "<action>%@</action><client>%@</client><system>%@</system><password>%@</password><key>%@</key><time>%@</time><verify>%@</verify><ext>%@</ext><type>%@</type><file>%@</file><json>%@</json>", upAction, username, deviceType, md5Psd, rand, currentTime, verify, fileExt,"1", imageStr!,"1")
+        
         
         Alamofire.request("http://www.yunmaiocr.com/SrvXMLAPI", method: .post, parameters: [:], encoding: data, headers: [:]).responseJSON { response in
             
@@ -35,50 +58,8 @@ class AuthenticationController: UIViewController {
             }
         }
         
-        
-        
-        
-        
-        
-        
-//        Alamofire.request(.POST, "https://something.com" , parameters: Dictionary(), encoding: .Custom({
-//            (convertible, params) in
-//            let mutableRequest = convertible.URLRequest.copy() as! NSMutableURLRequest
-//            
-//            let data = (self.testString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
-//            mutableRequest.HTTPBody = data
-//            return (mutableRequest, nil)
-//        }))
-//            
-//            
-//            .responseJSON { response in
-//                
-//                
-//                print(response.response) 
-//                
-//                print(response.result)   
-//                
-//                
-//        }
-//        
-//        
-//        let header = ["content-type" : "application/xml"]
-//        
-//        Alamofire.request("", method: .post, parameters: Dictionary(), encoding: URLEncoding.default, headers: header).responseJSON { response in
-//            
-//            if let JSON = response.result.value {
-//                print("JSON: \(JSON)")
-//            }
-//        }
-//        
-        
-        
-        
-        
-        
-        
-        
-        
+ 
+        */
         
     }
         

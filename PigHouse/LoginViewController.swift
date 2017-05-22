@@ -54,18 +54,22 @@ class LoginViewController: UIViewController {
                 print("JSON: \(JSON)")
                 
                 let resultDic = JSON as! Dictionary<String, Any>
-                let memberDic = resultDic["member"] as! Dictionary<String, Any>
                 
-                let member = ["id":memberDic["id"],"phone":memberDic["phone"],"level":memberDic["level"]]
+                let error = resultDic["error"]
                 
-                UserDefaults.standard.set(member, forKey: "member");
-                
-                
-                self.dismiss(animated: true, completion: { 
-                    print(self.navigationController!)
-                    self.delegate?.bookHouse()
+                if (error == nil) {
+                    let memberDic = resultDic["member"] as! Dictionary<String, Any>
                     
-                })
+                    let member = ["id":memberDic["id"],"phone":memberDic["phone"],"level":memberDic["level"]]
+                    
+                    UserDefaults.standard.set(member, forKey: "member");
+                    
+                    
+                    self.dismiss(animated: true, completion: {
+                        self.delegate?.bookHouse()
+                        
+                    })
+                }
 
             }
         }

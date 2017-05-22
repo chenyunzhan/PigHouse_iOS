@@ -309,7 +309,21 @@ class HouseDetailController: UIViewController,HouseDetailDelegate {
     
     
     func bookHouse() {
+        let userDefaults = UserDefaults.standard
+        let memberDic = userDefaults.dictionary(forKey: "member")
         
+        if (memberDic != nil) {
+            
+            let level = memberDic?["level"] as! String
+            
+            if Int(level)! < 3 {
+                let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+                let authController = storyboard.instantiateViewController(withIdentifier: "AuthenticationController")
+                authController.title = "认证"
+                self.navigationController?.pushViewController(authController, animated: true)
+            }
+                        
+        }
     }
     
 }
