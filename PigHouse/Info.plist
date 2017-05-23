@@ -48,5 +48,7 @@
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>始终允许访问位置信息</string>
+	<key>NSCameraUsageDescription</key>
+	<string>上传照片需要访问相机</string>
 </dict>
 </plist>

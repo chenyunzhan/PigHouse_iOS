@@ -590,6 +590,7 @@
                                 </constraints>
                                 <state key="normal" title="提交申核"/>
                                 <connections>
+                                    <action selector="checkCard:" destination="eKO-z6-4v2" eventType="touchUpInside" id="v0m-QM-ICE"/>
                                     <action selector="doLoginAction:" destination="pwb-xY-R5F" eventType="touchUpInside" id="IVO-vR-bA0"/>
                                 </connections>
                             </button>
@@ -628,6 +629,8 @@
                     <connections>
                         <outlet property="backImageView" destination="Rh3-s4-44N" id="8aU-fv-5Xa"/>
                         <outlet property="frontImageView" destination="qHI-da-cxF" id="0je-e1-b5o"/>
+                        <outlet property="idNoTF" destination="Y9s-zT-kyo" id="zxN-Pr-fCj"/>
+                        <outlet property="nameTF" destination="EKj-P9-laL" id="6AV-5h-eHO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOG-fe-vw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
