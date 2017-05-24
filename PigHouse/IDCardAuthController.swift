@@ -10,8 +10,16 @@ import Foundation
 import AVFoundation
 import Alamofire
 
+//定义一个协议
+protocol AutherDelegate {
+    func refreshAuther()
+}
 
 class IDCardAuthController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+    
+    var delegate : AutherDelegate?
+
     
     @IBOutlet weak var frontImageView: UIImageView!
     
@@ -25,13 +33,38 @@ class IDCardAuthController: UIViewController,UIImagePickerControllerDelegate,UIN
 
     @IBAction func checkCard(_ sender: Any) {
         
+        
+        let userDefaults = UserDefaults.standard
+        let memberDic = userDefaults.dictionary(forKey: "member")
+        
         let parameters: Parameters = [
             "idCardImageArray": self.idCardImageArray,
             "realName": self.nameTF.text!,
-            "cardId":self.idNoTF.text!
+            "cardId":self.idNoTF.text!,
+            "memberId":memberDic!["id"]!,
+            "level":memberDic!["level"]!
         ]
-        Alamofire.request("", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+        Alamofire.request(AppDelegate.baseURLString+"/member/idCardAuth", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             
+            if let JSON = response.result.value {
+                
+                let resultDic = JSON as! Dictionary<String, Any>
+                
+                let error = resultDic["error"]
+                
+                if (error == nil) {
+                    
+                    let memberDic = resultDic["member"] as! Dictionary<String, Any>
+                    
+                    let member = ["id":memberDic["id"],"phone":memberDic["phone"],"level":memberDic["level"],"cardImages":memberDic["cardImages"],"cardId":memberDic["cardId"],"realName":memberDic["realName"]]
+                    
+                    UserDefaults.standard.set(member, forKey: "member");
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    self.delegate?.refreshAuther()
+                }
+            }
+
         }
         
         
