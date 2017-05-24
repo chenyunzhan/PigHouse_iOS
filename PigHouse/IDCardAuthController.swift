@@ -25,6 +25,14 @@ class IDCardAuthController: UIViewController,UIImagePickerControllerDelegate,UIN
 
     @IBAction func checkCard(_ sender: Any) {
         
+        let parameters: Parameters = [
+            "idCardImageArray": self.idCardImageArray,
+            "realName": self.nameTF.text!,
+            "cardId":self.idNoTF.text!
+        ]
+        Alamofire.request("", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+            
+        }
         
         
     }
