@@ -58,11 +58,19 @@ class AuthenticationController: UIViewController, AutherDelegate {
         
         let userDefaults = UserDefaults.standard
         let memberDic = userDefaults.dictionary(forKey: "member")
-        let cardImages = memberDic?["cardImages"] as! String
-        let frontImage = cardImages.components(separatedBy: "-")[0]
-        let url = URL(string:  AppDelegate.baseURLString + "/card_images/" + frontImage)
-        let placeholderImage = UIImage(named: "WechatIMG3")!
-        self.cardIDImage.af_setImage(withURL: url!, placeholderImage: placeholderImage)
+        
+        
+        
+        let cardImages = memberDic?["cardImages"]
+        
+        if(cardImages != nil) {
+            let frontImage = (cardImages as! String).components(separatedBy: "-")[0]
+            let url = URL(string:  AppDelegate.baseURLString + "/card_images/" + frontImage)
+            let placeholderImage = UIImage(named: "WechatIMG3")!
+            self.cardIDImage.af_setImage(withURL: url!, placeholderImage: placeholderImage)
+        }
+        
+
     }
     
         

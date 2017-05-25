@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tck-VD-vX8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tck-VD-vX8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -261,7 +261,7 @@
                                         </constraints>
                                     </pageControl>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.1908332214" blue="0.24285456890000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="3HQ-V7-2bf" secondAttribute="bottom" id="FK2-Hy-dZ2"/>
                                     <constraint firstItem="LLI-Ue-DEA" firstAttribute="leading" secondItem="p8P-SN-Zxv" secondAttribute="leading" id="JAF-44-WY7"/>
@@ -307,8 +307,10 @@
                             <constraint firstAttribute="leadingMargin" secondItem="NZl-pM-fTN" secondAttribute="leading" id="1P1-C7-gUh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7lU-Ja-b8E" secondAttribute="trailing" id="2tu-fK-tF4"/>
                             <constraint firstAttribute="leadingMargin" secondItem="fcd-jH-Fml" secondAttribute="leading" id="5Em-xX-95W"/>
+                            <constraint firstItem="p8P-SN-Zxv" firstAttribute="top" secondItem="EVU-e8-Kac" secondAttribute="bottom" id="5J0-rk-jRo"/>
                             <constraint firstAttribute="leadingMargin" secondItem="367-Bk-BYC" secondAttribute="leading" id="6Kz-IA-TQO"/>
                             <constraint firstItem="wBj-AE-UAa" firstAttribute="leading" secondItem="Iap-hP-xqK" secondAttribute="leadingMargin" constant="-20" id="6Ph-uV-gtr"/>
+                            <constraint firstAttribute="trailing" secondItem="p8P-SN-Zxv" secondAttribute="trailing" id="7Oe-65-b1k"/>
                             <constraint firstItem="VUl-JP-UeO" firstAttribute="top" secondItem="qcN-UH-Mip" secondAttribute="bottom" constant="15" id="8xk-27-aYp"/>
                             <constraint firstItem="hhF-8C-mWf" firstAttribute="leading" secondItem="Iap-hP-xqK" secondAttribute="leadingMargin" constant="-20" id="9bP-Ta-ZAu"/>
                             <constraint firstItem="2Xv-X1-ts4" firstAttribute="top" secondItem="wBj-AE-UAa" secondAttribute="bottom" constant="46" id="ACz-Ob-jD6"/>
@@ -327,19 +329,17 @@
                             <constraint firstAttribute="trailingMargin" secondItem="wBj-AE-UAa" secondAttribute="trailing" constant="-20" id="VAm-uv-mQa"/>
                             <constraint firstItem="Zl0-Xw-qW2" firstAttribute="top" secondItem="hhF-8C-mWf" secondAttribute="bottom" constant="15" id="aYU-ya-zvl"/>
                             <constraint firstAttribute="leadingMargin" secondItem="kBQ-rD-Y5P" secondAttribute="leading" id="d0X-Te-RVb"/>
-                            <constraint firstItem="Vwy-BU-yek" firstAttribute="top" secondItem="p8P-SN-Zxv" secondAttribute="bottom" constant="8" id="dGY-q3-FBH"/>
                             <constraint firstItem="wBj-AE-UAa" firstAttribute="top" secondItem="Vwy-BU-yek" secondAttribute="bottom" constant="14" id="eL3-ob-m7a"/>
-                            <constraint firstItem="p8P-SN-Zxv" firstAttribute="leading" secondItem="Iap-hP-xqK" secondAttribute="leadingMargin" constant="-16" id="fh9-XX-7tK"/>
-                            <constraint firstItem="p8P-SN-Zxv" firstAttribute="top" secondItem="EVU-e8-Kac" secondAttribute="bottom" id="izB-0E-wX8"/>
+                            <constraint firstItem="Vwy-BU-yek" firstAttribute="top" secondItem="p8P-SN-Zxv" secondAttribute="bottom" constant="8" id="fq9-8s-Rzn"/>
                             <constraint firstAttribute="leadingMargin" secondItem="ae6-b3-yze" secondAttribute="leading" id="jBw-td-ZOE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QCf-W7-ezp" secondAttribute="trailing" id="kWg-mn-MLI"/>
                             <constraint firstItem="hhF-8C-mWf" firstAttribute="top" secondItem="qcN-UH-Mip" secondAttribute="bottom" constant="46" id="mRK-wl-wqb"/>
+                            <constraint firstItem="p8P-SN-Zxv" firstAttribute="leading" secondItem="Iap-hP-xqK" secondAttribute="leading" id="oJB-hI-JQI"/>
                             <constraint firstItem="ae6-b3-yze" firstAttribute="top" secondItem="qcN-UH-Mip" secondAttribute="bottom" constant="15" id="oKj-fI-4qK"/>
                             <constraint firstItem="Vwy-BU-yek" firstAttribute="leading" secondItem="Iap-hP-xqK" secondAttribute="leadingMargin" id="qja-lF-pBO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vwy-BU-yek" secondAttribute="trailing" id="seZ-BL-tZd"/>
                             <constraint firstItem="qcN-UH-Mip" firstAttribute="leading" secondItem="Iap-hP-xqK" secondAttribute="leadingMargin" constant="-20" id="tdK-7g-X0f"/>
                             <constraint firstItem="fcd-jH-Fml" firstAttribute="top" secondItem="wBj-AE-UAa" secondAttribute="bottom" constant="15" id="wCS-Db-CXA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="p8P-SN-Zxv" secondAttribute="trailing" constant="-16" id="zUg-7U-6QQ"/>
                             <constraint firstItem="7lU-Ja-b8E" firstAttribute="top" secondItem="2Xv-X1-ts4" secondAttribute="bottom" constant="15" id="zwO-Kk-Vk4"/>
                         </constraints>
                     </view>

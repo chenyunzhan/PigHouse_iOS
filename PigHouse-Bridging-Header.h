@@ -6,3 +6,4 @@
 #import <MAMapKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AMapNaviKit/AMapNaviKit.h>
+#import <AlipaySDK/AlipaySDK.h>

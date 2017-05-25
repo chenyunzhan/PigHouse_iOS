@@ -158,9 +158,11 @@ class HouseDetailController: UIViewController,HouseDetailDelegate {
         } else {
             pageControl.currentPage += 1
         }
-        let contentOffset = CGPoint(x: scrollView.frame.width * 2, y: 0)
+        let contentOffset = CGPoint(x: view.frame.width * 2, y: 0)
         scrollView.setContentOffset(contentOffset, animated: true)
+        
     }
+    
     
     /// 上一个图片
     func preImage() {
@@ -195,6 +197,8 @@ class HouseDetailController: UIViewController,HouseDetailDelegate {
         (scrollView.subviews[1] as! UIImageView).af_setImage(withURL: url1, placeholderImage: placeholderImage)
         (scrollView.subviews[2] as! UIImageView).af_setImage(withURL: url2, placeholderImage: placeholderImage)
         
+        scrollView.contentOffset = CGPoint(x: self.view.frame.width, y: 0)
+
     }
     
     
@@ -340,7 +344,7 @@ extension HouseDetailController: UIScrollViewDelegate {
     /// 当停止滚动的时候重新设置三个ImageView的内容，然后悄悄滴显示中间那个imageView
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         reloadImage()
-        scrollView.setContentOffset(CGPoint(x: scrollView.frame.width, y: 0), animated: false)
+        scrollView.setContentOffset(CGPoint(x: view.frame.width, y: 0), animated: false)
     }
     
     /// 停止拖拽，开始timer, 并且判断是显示上一个图片还是下一个图片

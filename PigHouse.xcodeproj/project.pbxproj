@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7F09CDB01EC4688D0055597C /* SelectableOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09CDAF1EC4688D0055597C /* SelectableOverlay.swift */; };
+		7F4DD6F31ED6D17400A3E4BF /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7F4DD6F11ED6D17400A3E4BF /* AlipaySDK.bundle */; };
+		7F4DD6F41ED6D17400A3E4BF /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4DD6F21ED6D17400A3E4BF /* AlipaySDK.framework */; };
+		7F4DD6F61ED6D1F900A3E4BF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4DD6F51ED6D1F900A3E4BF /* libc++.tbd */; };
+		7F4DD6F81ED6D21700A3E4BF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4DD6F71ED6D21700A3E4BF /* libz.tbd */; };
+		7F4DD6FA1ED6D49300A3E4BF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4DD6F91ED6D49300A3E4BF /* SystemConfiguration.framework */; };
+		7F4DD6FC1ED6D51400A3E4BF /* APViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4DD6FB1ED6D51400A3E4BF /* APViewController.swift */; };
 		7F4FB4EC1EC19CF200CF0332 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4FB4EB1EC19CF200CF0332 /* AppDelegate.swift */; };
 		7F4FB4EE1EC19CF200CF0332 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4FB4ED1EC19CF200CF0332 /* ViewController.swift */; };
 		7F4FB4F11EC19CF200CF0332 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F4FB4EF1EC19CF200CF0332 /* Main.storyboard */; };
@@ -24,6 +30,12 @@
 /* Begin PBXFileReference section */
 		7455E25163A83A564C0A0F4E /* Pods_PigHouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PigHouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F09CDAF1EC4688D0055597C /* SelectableOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableOverlay.swift; sourceTree = "<group>"; };
+		7F4DD6F11ED6D17400A3E4BF /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		7F4DD6F21ED6D17400A3E4BF /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		7F4DD6F51ED6D1F900A3E4BF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		7F4DD6F71ED6D21700A3E4BF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		7F4DD6F91ED6D49300A3E4BF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7F4DD6FB1ED6D51400A3E4BF /* APViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APViewController.swift; sourceTree = "<group>"; };
 		7F4FB4E81EC19CF200CF0332 /* PigHouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PigHouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F4FB4EB1EC19CF200CF0332 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F4FB4ED1EC19CF200CF0332 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +58,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F4DD6FA1ED6D49300A3E4BF /* SystemConfiguration.framework in Frameworks */,
+				7F4DD6F81ED6D21700A3E4BF /* libz.tbd in Frameworks */,
+				7F4DD6F61ED6D1F900A3E4BF /* libc++.tbd in Frameworks */,
 				D50F540AC5198DEDEAD383C9 /* Pods_PigHouse.framework in Frameworks */,
+				7F4DD6F41ED6D17400A3E4BF /* AlipaySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +81,9 @@
 		6062D27D99EF95E66375BD07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F4DD6F91ED6D49300A3E4BF /* SystemConfiguration.framework */,
+				7F4DD6F71ED6D21700A3E4BF /* libz.tbd */,
+				7F4DD6F51ED6D1F900A3E4BF /* libc++.tbd */,
 				7455E25163A83A564C0A0F4E /* Pods_PigHouse.framework */,
 			);
 			name = Frameworks;
@@ -76,6 +95,15 @@
 				7F09CDAF1EC4688D0055597C /* SelectableOverlay.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		7F4DD6F01ED6D17400A3E4BF /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				7F4DD6F11ED6D17400A3E4BF /* AlipaySDK.bundle */,
+				7F4DD6F21ED6D17400A3E4BF /* AlipaySDK.framework */,
+			);
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		7F4FB4DF1EC19CF200CF0332 = {
@@ -99,6 +127,7 @@
 		7F4FB4EA1EC19CF200CF0332 /* PigHouse */ = {
 			isa = PBXGroup;
 			children = (
+				7F4DD6F01ED6D17400A3E4BF /* Vendor */,
 				7F09CDAE1EC468680055597C /* Common */,
 				7F4FB5001EC1B7F700CF0332 /* PigHouse-Bridging-Header.h */,
 				7F4FB4EB1EC19CF200CF0332 /* AppDelegate.swift */,
@@ -112,6 +141,7 @@
 				7FE46C4D1ECE8459009A2765 /* AuthenticationController.swift */,
 				7F85F6D31ED28769007E9C02 /* test-idcard.JPG */,
 				7F85F6D51ED2BED5007E9C02 /* IDCardAuthController.swift */,
+				7F4DD6FB1ED6D51400A3E4BF /* APViewController.swift */,
 			);
 			path = PigHouse;
 			sourceTree = "<group>";
@@ -180,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F4DD6F31ED6D17400A3E4BF /* AlipaySDK.bundle in Resources */,
 				7F4FB4F61EC19CF200CF0332 /* LaunchScreen.storyboard in Resources */,
 				7F4FB4F31EC19CF200CF0332 /* Assets.xcassets in Resources */,
 				7F85F6D41ED28769007E9C02 /* test-idcard.JPG in Resources */,
@@ -243,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F09CDB01EC4688D0055597C /* SelectableOverlay.swift in Sources */,
+				7F4DD6FC1ED6D51400A3E4BF /* APViewController.swift in Sources */,
 				7F5E42A71EC5B3A8001B2B00 /* HouseDetailController.swift in Sources */,
 				7F4FB4EE1EC19CF200CF0332 /* ViewController.swift in Sources */,
 				7FE46C4E1ECE8459009A2765 /* AuthenticationController.swift in Sources */,
@@ -374,6 +406,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8EPAQYR3M5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PigHouse/Vendor",
+				);
 				INFOPLIST_FILE = PigHouse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhan.pig.house;
@@ -391,6 +427,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8EPAQYR3M5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PigHouse/Vendor",
+				);
 				INFOPLIST_FILE = PigHouse/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhan.pig.house;
