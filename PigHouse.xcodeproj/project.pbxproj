@@ -13,7 +13,7 @@
 		7F4DD6F61ED6D1F900A3E4BF /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4DD6F51ED6D1F900A3E4BF /* libc++.tbd */; };
 		7F4DD6F81ED6D21700A3E4BF /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4DD6F71ED6D21700A3E4BF /* libz.tbd */; };
 		7F4DD6FA1ED6D49300A3E4BF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4DD6F91ED6D49300A3E4BF /* SystemConfiguration.framework */; };
-		7F4DD6FC1ED6D51400A3E4BF /* APViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4DD6FB1ED6D51400A3E4BF /* APViewController.swift */; };
+		7F4DD6FC1ED6D51400A3E4BF /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4DD6FB1ED6D51400A3E4BF /* BalanceViewController.swift */; };
 		7F4FB4EC1EC19CF200CF0332 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4FB4EB1EC19CF200CF0332 /* AppDelegate.swift */; };
 		7F4FB4EE1EC19CF200CF0332 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4FB4ED1EC19CF200CF0332 /* ViewController.swift */; };
 		7F4FB4F11EC19CF200CF0332 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F4FB4EF1EC19CF200CF0332 /* Main.storyboard */; };
@@ -24,6 +24,14 @@
 		7F85F6D41ED28769007E9C02 /* test-idcard.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 7F85F6D31ED28769007E9C02 /* test-idcard.JPG */; };
 		7F85F6D61ED2BED5007E9C02 /* IDCardAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F85F6D51ED2BED5007E9C02 /* IDCardAuthController.swift */; };
 		7FE46C4E1ECE8459009A2765 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE46C4D1ECE8459009A2765 /* AuthenticationController.swift */; };
+		7FF52A3F1ED7BC8C00A63102 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF52A3E1ED7BC8C00A63102 /* CoreTelephony.framework */; };
+		7FF52A411ED7BCA800A63102 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF52A401ED7BCA800A63102 /* QuartzCore.framework */; };
+		7FF52A431ED7BCB600A63102 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF52A421ED7BCB600A63102 /* CoreText.framework */; };
+		7FF52A451ED7BD0700A63102 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF52A441ED7BD0700A63102 /* CoreGraphics.framework */; };
+		7FF52A471ED7BD2200A63102 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF52A461ED7BD2200A63102 /* UIKit.framework */; };
+		7FF52A491ED7BD2F00A63102 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF52A481ED7BD2F00A63102 /* Foundation.framework */; };
+		7FF52A4B1ED7BD3800A63102 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF52A4A1ED7BD3800A63102 /* CFNetwork.framework */; };
+		7FF52A4D1ED7BD4400A63102 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF52A4C1ED7BD4400A63102 /* CoreMotion.framework */; };
 		D50F540AC5198DEDEAD383C9 /* Pods_PigHouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7455E25163A83A564C0A0F4E /* Pods_PigHouse.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +43,7 @@
 		7F4DD6F51ED6D1F900A3E4BF /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		7F4DD6F71ED6D21700A3E4BF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7F4DD6F91ED6D49300A3E4BF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		7F4DD6FB1ED6D51400A3E4BF /* APViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APViewController.swift; sourceTree = "<group>"; };
+		7F4DD6FB1ED6D51400A3E4BF /* BalanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
 		7F4FB4E81EC19CF200CF0332 /* PigHouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PigHouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F4FB4EB1EC19CF200CF0332 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F4FB4ED1EC19CF200CF0332 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +57,14 @@
 		7F85F6D31ED28769007E9C02 /* test-idcard.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "test-idcard.JPG"; path = "../../../../../Downloads/Saas_idcard_scan/Saas身份证云识别(demo程序+文档))/test-idcard.JPG"; sourceTree = "<group>"; };
 		7F85F6D51ED2BED5007E9C02 /* IDCardAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDCardAuthController.swift; sourceTree = "<group>"; };
 		7FE46C4D1ECE8459009A2765 /* AuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
+		7FF52A3E1ED7BC8C00A63102 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		7FF52A401ED7BCA800A63102 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7FF52A421ED7BCB600A63102 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		7FF52A441ED7BD0700A63102 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7FF52A461ED7BD2200A63102 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7FF52A481ED7BD2F00A63102 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7FF52A4A1ED7BD3800A63102 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7FF52A4C1ED7BD4400A63102 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		C4B70B725F917F492F1D5776 /* Pods-PigHouse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PigHouse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PigHouse/Pods-PigHouse.debug.xcconfig"; sourceTree = "<group>"; };
 		CFFE5CAD53F8A5DDEBB4D59B /* Pods-PigHouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PigHouse.release.xcconfig"; path = "Pods/Target Support Files/Pods-PigHouse/Pods-PigHouse.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +74,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF52A4D1ED7BD4400A63102 /* CoreMotion.framework in Frameworks */,
+				7FF52A4B1ED7BD3800A63102 /* CFNetwork.framework in Frameworks */,
+				7FF52A491ED7BD2F00A63102 /* Foundation.framework in Frameworks */,
+				7FF52A471ED7BD2200A63102 /* UIKit.framework in Frameworks */,
+				7FF52A451ED7BD0700A63102 /* CoreGraphics.framework in Frameworks */,
+				7FF52A431ED7BCB600A63102 /* CoreText.framework in Frameworks */,
+				7FF52A411ED7BCA800A63102 /* QuartzCore.framework in Frameworks */,
+				7FF52A3F1ED7BC8C00A63102 /* CoreTelephony.framework in Frameworks */,
 				7F4DD6FA1ED6D49300A3E4BF /* SystemConfiguration.framework in Frameworks */,
 				7F4DD6F81ED6D21700A3E4BF /* libz.tbd in Frameworks */,
 				7F4DD6F61ED6D1F900A3E4BF /* libc++.tbd in Frameworks */,
@@ -81,6 +105,14 @@
 		6062D27D99EF95E66375BD07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FF52A4C1ED7BD4400A63102 /* CoreMotion.framework */,
+				7FF52A4A1ED7BD3800A63102 /* CFNetwork.framework */,
+				7FF52A481ED7BD2F00A63102 /* Foundation.framework */,
+				7FF52A461ED7BD2200A63102 /* UIKit.framework */,
+				7FF52A441ED7BD0700A63102 /* CoreGraphics.framework */,
+				7FF52A421ED7BCB600A63102 /* CoreText.framework */,
+				7FF52A401ED7BCA800A63102 /* QuartzCore.framework */,
+				7FF52A3E1ED7BC8C00A63102 /* CoreTelephony.framework */,
 				7F4DD6F91ED6D49300A3E4BF /* SystemConfiguration.framework */,
 				7F4DD6F71ED6D21700A3E4BF /* libz.tbd */,
 				7F4DD6F51ED6D1F900A3E4BF /* libc++.tbd */,
@@ -141,7 +173,7 @@
 				7FE46C4D1ECE8459009A2765 /* AuthenticationController.swift */,
 				7F85F6D31ED28769007E9C02 /* test-idcard.JPG */,
 				7F85F6D51ED2BED5007E9C02 /* IDCardAuthController.swift */,
-				7F4DD6FB1ED6D51400A3E4BF /* APViewController.swift */,
+				7F4DD6FB1ED6D51400A3E4BF /* BalanceViewController.swift */,
 			);
 			path = PigHouse;
 			sourceTree = "<group>";
@@ -274,7 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F09CDB01EC4688D0055597C /* SelectableOverlay.swift in Sources */,
-				7F4DD6FC1ED6D51400A3E4BF /* APViewController.swift in Sources */,
+				7F4DD6FC1ED6D51400A3E4BF /* BalanceViewController.swift in Sources */,
 				7F5E42A71EC5B3A8001B2B00 /* HouseDetailController.swift in Sources */,
 				7F4FB4EE1EC19CF200CF0332 /* ViewController.swift in Sources */,
 				7FE46C4E1ECE8459009A2765 /* AuthenticationController.swift in Sources */,

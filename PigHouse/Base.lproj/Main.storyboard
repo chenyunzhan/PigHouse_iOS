@@ -545,6 +545,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="balanceImageView" destination="aYp-zp-CQI" id="ouR-MK-TGA"/>
                         <outlet property="cardIDImage" destination="vsg-hz-mX2" id="aAy-I7-vdd"/>
                     </connections>
                 </viewController>
@@ -636,6 +637,125 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOG-fe-vw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4180" y="198"/>
+        </scene>
+        <!--Balance View Controller-->
+        <scene sceneID="TuS-NQ-AgO">
+            <objects>
+                <viewController storyboardIdentifier="BalanceViewController" automaticallyAdjustsScrollViewInsets="NO" id="bR0-1F-o7g" customClass="BalanceViewController" customModule="PigHouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="svb-UB-JO0"/>
+                        <viewControllerLayoutGuide type="bottom" id="RG8-0a-FEm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="erq-2P-gCI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CG5-6Q-HD7">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <segue destination="zwx-Sq-cgf" kind="embed" id="577-mg-PZR"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjW-MA-F5Z">
+                                <rect key="frame" x="16" y="602" width="343" height="45"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="r27-eQ-2eC"/>
+                                </constraints>
+                                <state key="normal" title="提交申核"/>
+                                <connections>
+                                    <action selector="checkCard:" destination="eKO-z6-4v2" eventType="touchUpInside" id="ect-ot-xd0"/>
+                                    <action selector="doLoginAction:" destination="pwb-xY-R5F" eventType="touchUpInside" id="XHS-08-cBt"/>
+                                    <action selector="payBalance:" destination="bR0-1F-o7g" eventType="touchUpInside" id="wBp-z9-lS9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CG5-6Q-HD7" firstAttribute="top" secondItem="svb-UB-JO0" secondAttribute="bottom" id="8Ng-EW-U6p"/>
+                            <constraint firstItem="RG8-0a-FEm" firstAttribute="top" secondItem="CG5-6Q-HD7" secondAttribute="bottom" id="PuL-PF-Gcv"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="zjW-MA-F5Z" secondAttribute="leading" id="Yuk-Co-dgw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zjW-MA-F5Z" secondAttribute="trailing" id="YvM-Bn-kJ0"/>
+                            <constraint firstAttribute="trailing" secondItem="CG5-6Q-HD7" secondAttribute="trailing" id="d7E-ff-DLr"/>
+                            <constraint firstItem="CG5-6Q-HD7" firstAttribute="leading" secondItem="erq-2P-gCI" secondAttribute="leading" id="f7l-sT-BPy"/>
+                            <constraint firstItem="RG8-0a-FEm" firstAttribute="top" secondItem="zjW-MA-F5Z" secondAttribute="bottom" constant="20" id="zIf-5B-wgh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="82Y-qL-1cq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4999.1999999999998" y="197.45127436281859"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="OlG-lp-9Uy">
+            <objects>
+                <tableViewController id="zwx-Sq-cgf" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="g9v-NO-Gt9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="支付金额" id="LyC-Eg-hbU">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="s2Q-vh-e7x" detailTextLabel="aWg-WQ-AwD" style="IBUITableViewCellStyleValue1" id="x4s-nb-m76">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x4s-nb-m76" id="HkS-di-cD1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="金额" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s2Q-vh-e7x">
+                                                    <rect key="frame" x="15" y="12" width="35" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="￥999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aWg-WQ-AwD">
+                                                    <rect key="frame" x="311" y="12" width="49" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="支付方式" id="KKa-Js-tZC">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="G7K-gx-TLd" style="IBUITableViewCellStyleDefault" id="D7H-1c-veJ">
+                                        <rect key="frame" x="0.0" y="156" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D7H-1c-veJ" id="wHN-IQ-z0b">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="支付宝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G7K-gx-TLd">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="zwx-Sq-cgf" id="gSJ-r6-bV4"/>
+                            <outlet property="delegate" destination="zwx-Sq-cgf" id="vTE-If-Wre"/>
+                        </connections>
+                    </tableView>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rat-Kq-xQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5750" y="197"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0sX-Oe-Ent">

@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
                 if (error == nil) {
                     let memberDic = resultDic["member"] as! Dictionary<String, Any>
                     
-                    let member = ["id":memberDic["id"],"phone":memberDic["phone"],"level":memberDic["level"]]
+                    let member = ["id":memberDic["id"],"phone":memberDic["phone"],"level":memberDic["level"],"cardImages":memberDic["cardImages"],"cardId":memberDic["cardId"],"realName":memberDic["realName"]]
                     
                     UserDefaults.standard.set(member, forKey: "member");
                     

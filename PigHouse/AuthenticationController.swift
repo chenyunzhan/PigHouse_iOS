@@ -15,12 +15,27 @@ class AuthenticationController: UIViewController, AutherDelegate {
     
     @IBOutlet weak var cardIDImage: UIImageView!
     
+    @IBOutlet weak var balanceImageView: UIImageView!
+    
     override func viewDidLoad() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.cardAuth))
         self.cardIDImage.addGestureRecognizer(tapGesture)
         self.cardIDImage.isUserInteractionEnabled = true
         
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(self.payBalance))
+        self.balanceImageView.addGestureRecognizer(tapGesture2)
+        self.balanceImageView.isUserInteractionEnabled = true
+        
         self.refreshAuther()
+    }
+    
+    
+    func payBalance() -> Void {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        let balanceViewController = storyboard.instantiateViewController(withIdentifier: "BalanceViewController")
+        balanceViewController.title = "支付押金"
+        self.navigationController?.pushViewController(balanceViewController, animated: true)
+
     }
     
     
